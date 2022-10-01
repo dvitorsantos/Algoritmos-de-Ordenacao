@@ -5,8 +5,12 @@ import java.util.Timer;
 public class Main {
     public static void main(String[] args) {
         Sort<Double> sortDouble = new Sort<Double>();
+        Sort<Double> sortDoubleMedio = new Sort<Double>();
+        Sort<Double> sortDoubleGrande = new Sort<Double>();
         SortDecrescente<Double> sortDecrescenteDouble = new SortDecrescente<Double>();
         Sort<Integer> sortInteger = new Sort<Integer>();
+        Sort<String> sortS = new Sort<String>();
+
       
         Scanner entrada = new Scanner(System.in);
         Random gerador = new Random();
@@ -24,76 +28,51 @@ public class Main {
           
           int variavel = entrada.nextInt();
           
+          System.out.print("\nPressione Um para Ordenar em Ordem Crescente ou Dois para Decrescente:");
+          
+          ordem = entrada.nextInt();
+          sortDouble.setOrdem(ordem);
+          
           switch(variavel){
             case 1:
-              
-              System.out.println("Pressione Um para Ordenar em Ordem Crescente ou Dois para Decrescente:");
               
               Double[] vectorDouble= new Double[1000];
               
               for(int i = 0;i<vectorDouble.length;i++){
                 vectorDouble[i]=gerador.nextDouble(100);
               }
-              ordem = entrada.nextInt();
+                          
+              vectorDouble = sortDouble.selectionSort(vectorDouble);
               
-              if (ordem==1){
-              //sort selection com double
-                vectorDouble = sortDouble.selectionSort(vectorDouble);
-              }
-              else{
-              //sort selection com double
-                vectorDouble = sortDecrescenteDouble.selectionSortDecrescente(vectorDouble);
-              }
-      
               for (int i = 0; i < vectorDouble.length; i++) {
                   System.out.println(vectorDouble[i]);
               }
       
               break;
             case 2:
-              System.out.println("Pressione Um para Ordenar em Ordem Crescente ou Dois para Decrescente:");
               
               Double[] vectorDoubleMedio= new Double[100000];
               
               for(int i = 0;i<vectorDoubleMedio.length;i++){
                 vectorDoubleMedio[i]=gerador.nextDouble(100);
               }
-              ordem = entrada.nextInt();
+
+              vectorDoubleMedio = sortDouble.selectionSort(vectorDoubleMedio);
               
-              if (ordem==1){
-              //sort selection com double
-                vectorDoubleMedio = sortDouble.selectionSort(vectorDoubleMedio);
-              }
-                
-              else{
-              //sort selection com double
-                vectorDoubleMedio = sortDecrescenteDouble.selectionSortDecrescente(vectorDoubleMedio);
-              }
-      
               for (int i = 0; i < vectorDoubleMedio.length; i++) {
                   System.out.println(vectorDoubleMedio[i]);
               }
               break;
             case 3:
-              System.out.println("Pressione Um para Ordenar em Ordem Crescente ou Dois para Decrescente:");
               
-              Double[] vectorDoubleGrande= new Double[100000];
+              Double[] vectorDoubleGrande= new Double[1000000];
               
               for(int i = 0;i<vectorDoubleGrande.length;i++){
                 vectorDoubleGrande[i]=gerador.nextDouble(100);
               }
-              ordem = entrada.nextInt();
+
+              vectorDoubleGrande = sortDouble.selectionSort(vectorDoubleGrande);
               
-              if (ordem==1){
-              //sort selection com double
-                vectorDoubleGrande = sortDouble.selectionSort(vectorDoubleGrande);
-              }
-                
-              else{
-              //sort selection com double
-                vectorDoubleGrande = sortDecrescenteDouble.selectionSortDecrescente(vectorDoubleGrande);
-              }
-      
               for (int i = 0; i < vectorDoubleGrande.length; i++) {
                   System.out.println(vectorDoubleGrande[i]);
               }
