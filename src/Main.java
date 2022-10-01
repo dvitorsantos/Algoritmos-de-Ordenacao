@@ -87,18 +87,10 @@ public class Main {
                 System.out.println("Informe o Elemento "+ (i+1)+" do Vetor:");
                 vectorDoublePessoal[i]=entrada.nextDouble();
               }
-              System.out.println("Pressione Um para Ordenar em Ordem Crescente ou Dois para Decrescente:");
-              ordem = entrada.nextInt();
               
-              if (ordem==1){
               //sort selection com double
-                vectorDoublePessoal = sortDouble.selectionSort(vectorDoublePessoal);
-              }
+              vectorDoublePessoal = sortDouble.selectionSort(vectorDoublePessoal);         
                 
-              else{
-              //sort selection com double
-                vectorDoublePessoal = sortDecrescenteDouble.selectionSortDecrescente(vectorDoublePessoal);
-              }
               for (int i = 0; i < vectorDoublePessoal.length; i++) {
                   System.out.println(vectorDoublePessoal[i]);
               }
