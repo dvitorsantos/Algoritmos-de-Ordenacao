@@ -40,7 +40,7 @@ public class Main {
             sortInteger.setOrdem(ordem);
           }
           if(formato==3){
-            sortInteger.setOrdem(ordem);  
+            sortString.setOrdem(ordem);  
           }            
           
           switch(variavel){
@@ -51,6 +51,7 @@ public class Main {
                 
                 for(int i = 0;i<vectorDouble.length;i++){
                   vectorDouble[i]=gerador.nextDouble(100);
+                  
                 }
                             
                 vectorDouble = sortDouble.selectionSort(vectorDouble);
@@ -65,6 +66,9 @@ public class Main {
                 
                 for(int i = 0;i<vectorInteger.length;i++){
                   vectorInteger[i]=gerador.nextInt(100);
+                  while(vectorInteger[i]<10){
+                    vectorInteger[i]=gerador.nextInt(100);
+                  }
                 }
                             
                 vectorInteger = sortInteger.selectionSort(vectorInteger);
@@ -75,16 +79,26 @@ public class Main {
               }
               
             else if (formato==3){
-                Double[] vectorDouble= new Double[1000];
+                String[] vectorString= new String[1000];
+                int leftLimit = 48; // numeral '0'
+                int rightLimit = 122; // letra 'z'
+                int targetStringLength = 10;
+                Random random = new Random();
+            
                 
-                for(int i = 0;i<vectorDouble.length;i++){
-                  vectorDouble[i]=gerador.nextDouble(100);
+                for(int i = 0;i<vectorString.length;i++){
+                  String generatedString = random.ints(leftLimit, rightLimit + 1)
+                  .filter(j -> (j <= 57 || j >= 65) && (j <= 90 || j >= 97))
+                  .limit(targetStringLength)
+                  .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                  .toString();
+                  vectorString[i]=generatedString;
                 }
                             
-                vectorDouble = sortDouble.selectionSort(vectorDouble);
+                vectorString = sortString.selectionSort(vectorString);
                 
-                for (int i = 0; i < vectorDouble.length; i++) {
-                    System.out.println(vectorDouble[i]);
+                for (int i = 0; i < vectorString.length; i++) {
+                    System.out.println(vectorString[i]);
                 }
               }
 
@@ -115,6 +129,9 @@ public class Main {
                 
                 for(int i = 0;i<vectorInteger.length;i++){
                   vectorInteger[i]=gerador.nextInt(100);
+                  while(vectorInteger[i]<10){
+                    vectorInteger[i]=gerador.nextInt(100);
+                  }
                 }
                             
                 vectorInteger = sortInteger.selectionSort(vectorInteger);
@@ -125,16 +142,26 @@ public class Main {
               }
               
             else if (formato==3){
-                Double[] vectorDouble= new Double[100000];
+                String[] vectorString= new String[100000];
+                int leftLimit = 48; // numeral '0'
+                int rightLimit = 122; // letra 'z'
+                int targetStringLength = 10;
+                Random random = new Random();
+            
                 
-                for(int i = 0;i<vectorDouble.length;i++){
-                  vectorDouble[i]=gerador.nextDouble(100);
+                for(int i = 0;i<vectorString.length;i++){
+                  String generatedString = random.ints(leftLimit, rightLimit + 1)
+                  .filter(j -> (j <= 57 || j >= 65) && (j <= 90 || j >= 97))
+                  .limit(targetStringLength)
+                  .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                  .toString();
+                  vectorString[i]=generatedString;
                 }
                             
-                vectorDouble = sortDouble.selectionSort(vectorDouble);
+                vectorString = sortString.selectionSort(vectorString);
                 
-                for (int i = 0; i < vectorDouble.length; i++) {
-                    System.out.println(vectorDouble[i]);
+                for (int i = 0; i < vectorString.length; i++) {
+                    System.out.println(vectorString[i]);
                 }
               }
             else{
@@ -163,6 +190,9 @@ public class Main {
                 
                 for(int i = 0;i<vectorInteger.length;i++){
                   vectorInteger[i]=gerador.nextInt(100);
+                  while(vectorInteger[i]<10){
+                    vectorInteger[i]=gerador.nextInt(100);
+                  }
                 }
                             
                 vectorInteger = sortInteger.selectionSort(vectorInteger);
@@ -173,16 +203,26 @@ public class Main {
               }
               
             else if (formato==3){
-                Double[] vectorDouble= new Double[1000000];
+                String[] vectorString= new String[1000000];
+                int leftLimit = 48; // numeral '0'
+                int rightLimit = 122; // letra 'z'
+                int targetStringLength = 10;
+                Random random = new Random();
+            
                 
-                for(int i = 0;i<vectorDouble.length;i++){
-                  vectorDouble[i]=gerador.nextDouble(100);
+                for(int i = 0;i<vectorString.length;i++){
+                  String generatedString = random.ints(leftLimit, rightLimit + 1)
+                  .filter(j -> (j <= 57 || j >= 65) && (j <= 90 || j >= 97))
+                  .limit(targetStringLength)
+                  .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                  .toString();
+                  vectorString[i]=generatedString;
                 }
                             
-                vectorDouble = sortDouble.selectionSort(vectorDouble);
+                vectorString = sortString.selectionSort(vectorString);
                 
-                for (int i = 0; i < vectorDouble.length; i++) {
-                    System.out.println(vectorDouble[i]);
+                for (int i = 0; i < vectorString.length; i++) {
+                    System.out.println(vectorString[i]);
                 }
               }
             else{
@@ -196,7 +236,8 @@ public class Main {
               if(formato==1){
                 Double[] vectorDoublePessoal= new Double[tamanho];
                 for(int i = 0;i<tamanho;i++){
-                  System.out.println("Informe o Elemento "+ (i+1)+" do Vetor:");
+                  int k=i;
+                  System.out.println("Informe o Elemento "+ (k+1)+" do Vetor:");
                   vectorDoublePessoal[i]=entrada.nextDouble();
                 }
                 
@@ -209,14 +250,13 @@ public class Main {
               if(formato==2){
                 Integer[] vectorIntegerPessoal= new Integer[tamanho];
                 for(int i = 0;i<tamanho;i++){
-                  System.out.println("Informe o Elemento "+ (i+1)+" do Vetor:");
+                  int k=i;
+                  System.out.println("Informe o Elemento "+ (k+1)+" do Vetor:");
                   vectorIntegerPessoal[i]=entrada.nextInt();
                 }
                 
-                //sort selection com double
                 vectorIntegerPessoal = sortInteger.selectionSort(vectorIntegerPessoal); 
 
-                vectorIntegerPessoal = sortInteger.selectionSort(vectorIntegerPessoal); 
                 for (int i = 0; i < vectorIntegerPessoal.length; i++) {
                   System.out.println(vectorIntegerPessoal[i]);
               }
@@ -224,14 +264,13 @@ public class Main {
               if(formato==3){
                 String[] vectorStringPessoal= new String[tamanho];
                 for(int i = 0;i<tamanho;i++){
-                  System.out.println("Informe o Elemento "+ (i+1)+" do Vetor:");
+                  int k=i;
+                  System.out.println("Informe o Elemento "+ (k+1)+" do Vetor:");
                   vectorStringPessoal[i]=entrada.nextLine();
                 }
                 
-                //sort selection com double
                 vectorStringPessoal = sortString.selectionSort(vectorStringPessoal); 
 
-                vectorStringPessoal = sortString.selectionSort(vectorStringPessoal); 
                 for (int i = 0; i < vectorStringPessoal.length; i++) {
                   System.out.println(vectorStringPessoal[i]);
               }
