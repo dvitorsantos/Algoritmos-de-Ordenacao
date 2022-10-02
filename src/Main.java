@@ -51,7 +51,9 @@ public class Main {
                 
                 for(int i = 0;i<vectorDouble.length;i++){
                   vectorDouble[i]=gerador.nextDouble(100);
-                  
+                  while(vectorDouble[i]<10){
+                    vectorDouble[i]=gerador.nextDouble(100);
+                  }
                 }
                             
                 vectorDouble = sortDouble.selectionSort(vectorDouble);
@@ -115,6 +117,9 @@ public class Main {
                 
                 for(int i = 0;i<vectorDouble.length;i++){
                   vectorDouble[i]=gerador.nextDouble(100);
+                  while(vectorDouble[i]<10){
+                    vectorDouble[i]=gerador.nextDouble(100);
+                  }
                 }
                             
                 vectorDouble = sortDouble.selectionSort(vectorDouble);
@@ -176,6 +181,9 @@ public class Main {
                 
                 for(int i = 0;i<vectorDouble.length;i++){
                   vectorDouble[i]=gerador.nextDouble(100);
+                  while(vectorDouble[i]<10){
+                    vectorDouble[i]=gerador.nextDouble(100);
+                  }
                 }
                             
                 vectorDouble = sortDouble.selectionSort(vectorDouble);
