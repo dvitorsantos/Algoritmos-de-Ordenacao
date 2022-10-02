@@ -5,12 +5,8 @@ import java.util.Timer;
 public class Main {
     public static void main(String[] args) {
         Sort<Double> sortDouble = new Sort<Double>();
-        Sort<Double> sortDoubleMedio = new Sort<Double>();
-        Sort<Double> sortDoubleGrande = new Sort<Double>();
-        SortDecrescente<Double> sortDecrescenteDouble = new SortDecrescente<Double>();
         Sort<Integer> sortInteger = new Sort<Integer>();
-        Sort<String> sortS = new Sort<String>();
-
+        Sort<String> sortString = new Sort<String>();
       
         Scanner entrada = new Scanner(System.in);
         Random gerador = new Random();
@@ -27,73 +23,220 @@ public class Main {
           System.out.println("5-Encerrar Execução do Programa");
           
           int variavel = entrada.nextInt();
+          int formato;
           
           System.out.print("\nPressione Um para Ordenar em Ordem Crescente ou Dois para Decrescente:");
-          
+            
           ordem = entrada.nextInt();
-          sortDouble.setOrdem(ordem);
+            
+          System.out.println("\nPressione um para Double dois para Integer ou três para String:");
+          
+          formato = entrada.nextInt();
+            
+          if(formato==1){
+            sortDouble.setOrdem(ordem);
+          }
+          if(formato==2){
+            sortInteger.setOrdem(ordem);
+          }
+          if(formato==3){
+            sortInteger.setOrdem(ordem);  
+          }            
           
           switch(variavel){
-            case 1:
-              
-              Double[] vectorDouble= new Double[1000];
-              
-              for(int i = 0;i<vectorDouble.length;i++){
-                vectorDouble[i]=gerador.nextDouble(100);
+            case 1:           
+              if (formato==1){
+                
+                Double[] vectorDouble= new Double[1000];
+                
+                for(int i = 0;i<vectorDouble.length;i++){
+                  vectorDouble[i]=gerador.nextDouble(100);
+                }
+                            
+                vectorDouble = sortDouble.selectionSort(vectorDouble);
+                
+                for (int i = 0; i < vectorDouble.length; i++) {
+                    System.out.println(vectorDouble[i]);
+                }
               }
-                          
-              vectorDouble = sortDouble.selectionSort(vectorDouble);
-              
-              for (int i = 0; i < vectorDouble.length; i++) {
-                  System.out.println(vectorDouble[i]);
+                
+            else if (formato==2){
+                Integer[] vectorInteger = new Integer[1000];
+                
+                for(int i = 0;i<vectorInteger.length;i++){
+                  vectorInteger[i]=gerador.nextInt(100);
+                }
+                            
+                vectorInteger = sortInteger.selectionSort(vectorInteger);
+                
+                for (int i = 0; i < vectorInteger.length; i++) {
+                    System.out.println(vectorInteger[i]);
+                }
               }
-      
+              
+            else if (formato==3){
+                Double[] vectorDouble= new Double[1000];
+                
+                for(int i = 0;i<vectorDouble.length;i++){
+                  vectorDouble[i]=gerador.nextDouble(100);
+                }
+                            
+                vectorDouble = sortDouble.selectionSort(vectorDouble);
+                
+                for (int i = 0; i < vectorDouble.length; i++) {
+                    System.out.println(vectorDouble[i]);
+                }
+              }
+
+            else{
+              System.out.println("INFORME UM VALOR VÁLIDO!");
+            }
+              
               break;
             case 2:
               
-              Double[] vectorDoubleMedio= new Double[100000];
-              
-              for(int i = 0;i<vectorDoubleMedio.length;i++){
-                vectorDoubleMedio[i]=gerador.nextDouble(100);
+              if (formato==1){
+                
+                Double[] vectorDouble= new Double[100000];
+                
+                for(int i = 0;i<vectorDouble.length;i++){
+                  vectorDouble[i]=gerador.nextDouble(100);
+                }
+                            
+                vectorDouble = sortDouble.selectionSort(vectorDouble);
+                
+                for (int i = 0; i < vectorDouble.length; i++) {
+                    System.out.println(vectorDouble[i]);
+                }
               }
-
-              vectorDoubleMedio = sortDouble.selectionSort(vectorDoubleMedio);
-              
-              for (int i = 0; i < vectorDoubleMedio.length; i++) {
-                  System.out.println(vectorDoubleMedio[i]);
+                
+            else if (formato==2){
+                Integer[] vectorInteger = new Integer[100000];
+                
+                for(int i = 0;i<vectorInteger.length;i++){
+                  vectorInteger[i]=gerador.nextInt(100);
+                }
+                            
+                vectorInteger = sortInteger.selectionSort(vectorInteger);
+                
+                for (int i = 0; i < vectorInteger.length; i++) {
+                    System.out.println(vectorInteger[i]);
+                }
               }
+              
+            else if (formato==3){
+                Double[] vectorDouble= new Double[100000];
+                
+                for(int i = 0;i<vectorDouble.length;i++){
+                  vectorDouble[i]=gerador.nextDouble(100);
+                }
+                            
+                vectorDouble = sortDouble.selectionSort(vectorDouble);
+                
+                for (int i = 0; i < vectorDouble.length; i++) {
+                    System.out.println(vectorDouble[i]);
+                }
+              }
+            else{
+              System.out.println("INFORME UM VALOR VÁLIDO!");
+            }
               break;
             case 3:
               
-              Double[] vectorDoubleGrande= new Double[1000000];
-              
-              for(int i = 0;i<vectorDoubleGrande.length;i++){
-                vectorDoubleGrande[i]=gerador.nextDouble(100);
+              if (formato==1){
+                
+                Double[] vectorDouble= new Double[1000000];
+                
+                for(int i = 0;i<vectorDouble.length;i++){
+                  vectorDouble[i]=gerador.nextDouble(100);
+                }
+                            
+                vectorDouble = sortDouble.selectionSort(vectorDouble);
+                
+                for (int i = 0; i < vectorDouble.length; i++) {
+                    System.out.println(vectorDouble[i]);
+                }
               }
-
-              vectorDoubleGrande = sortDouble.selectionSort(vectorDoubleGrande);
-              
-              for (int i = 0; i < vectorDoubleGrande.length; i++) {
-                  System.out.println(vectorDoubleGrande[i]);
+                
+            else if (formato==2){
+                Integer[] vectorInteger = new Integer[1000000];
+                
+                for(int i = 0;i<vectorInteger.length;i++){
+                  vectorInteger[i]=gerador.nextInt(100);
+                }
+                            
+                vectorInteger = sortInteger.selectionSort(vectorInteger);
+                
+                for (int i = 0; i < vectorInteger.length; i++) {
+                    System.out.println(vectorInteger[i]);
+                }
               }
+              
+            else if (formato==3){
+                Double[] vectorDouble= new Double[1000000];
+                
+                for(int i = 0;i<vectorDouble.length;i++){
+                  vectorDouble[i]=gerador.nextDouble(100);
+                }
+                            
+                vectorDouble = sortDouble.selectionSort(vectorDouble);
+                
+                for (int i = 0; i < vectorDouble.length; i++) {
+                    System.out.println(vectorDouble[i]);
+                }
+              }
+            else{
+              System.out.println("INFORME UM VALOR VÁLIDO!");
+            }
               break;
             case 4:
               
               System.out.println("Informe o Número de Elementos que o Vetor Possui:");
               tamanho = entrada.nextInt();
-              Double[] vectorDoublePessoal= new Double[tamanho];
-              
-              for(int i = 0;i<tamanho;i++){
-                System.out.println("Informe o Elemento "+ (i+1)+" do Vetor:");
-                vectorDoublePessoal[i]=entrada.nextDouble();
-              }
-              
-              //sort selection com double
-              vectorDoublePessoal = sortDouble.selectionSort(vectorDoublePessoal);         
+              if(formato==1){
+                Double[] vectorDoublePessoal= new Double[tamanho];
+                for(int i = 0;i<tamanho;i++){
+                  System.out.println("Informe o Elemento "+ (i+1)+" do Vetor:");
+                  vectorDoublePessoal[i]=entrada.nextDouble();
+                }
                 
-              for (int i = 0; i < vectorDoublePessoal.length; i++) {
+                //sort selection com double
+                vectorDoublePessoal = sortDouble.selectionSort(vectorDoublePessoal); 
+                for (int i = 0; i < vectorDoublePessoal.length; i++) {
                   System.out.println(vectorDoublePessoal[i]);
               }
+              }
+              if(formato==2){
+                Integer[] vectorIntegerPessoal= new Integer[tamanho];
+                for(int i = 0;i<tamanho;i++){
+                  System.out.println("Informe o Elemento "+ (i+1)+" do Vetor:");
+                  vectorIntegerPessoal[i]=entrada.nextInt();
+                }
+                
+                //sort selection com double
+                vectorIntegerPessoal = sortInteger.selectionSort(vectorIntegerPessoal); 
+
+                vectorIntegerPessoal = sortInteger.selectionSort(vectorIntegerPessoal); 
+                for (int i = 0; i < vectorIntegerPessoal.length; i++) {
+                  System.out.println(vectorIntegerPessoal[i]);
+              }
+              }
+              if(formato==3){
+                String[] vectorStringPessoal= new String[tamanho];
+                for(int i = 0;i<tamanho;i++){
+                  System.out.println("Informe o Elemento "+ (i+1)+" do Vetor:");
+                  vectorStringPessoal[i]=entrada.nextLine();
+                }
+                
+                //sort selection com double
+                vectorStringPessoal = sortString.selectionSort(vectorStringPessoal); 
+
+                vectorStringPessoal = sortString.selectionSort(vectorStringPessoal); 
+                for (int i = 0; i < vectorStringPessoal.length; i++) {
+                  System.out.println(vectorStringPessoal[i]);
+              }
+              }
+              
               break;
             case 5:
               System.out.println("PROGRAMA ENCERRADO!");
