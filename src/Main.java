@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
@@ -46,7 +47,8 @@ public class Main {
           switch(variavel){
             case 1:           
               if (formato==1){
-                
+                long comecoDaContagem = System.nanoTime();
+                               
                 Double[] vectorDouble= new Double[1000];
                 
                 for(int i = 0;i<vectorDouble.length;i++){
@@ -55,15 +57,20 @@ public class Main {
                     vectorDouble[i]=gerador.nextDouble(100);
                   }
                 }
-                            
                 vectorDouble = sortDouble.selectionSort(vectorDouble);
                 
                 for (int i = 0; i < vectorDouble.length; i++) {
                     System.out.println(vectorDouble[i]);
                 }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
+              
                 
             else if (formato==2){
+                long comecoDaContagem = System.nanoTime();
+              
                 Integer[] vectorInteger = new Integer[1000];
                 
                 for(int i = 0;i<vectorInteger.length;i++){
@@ -78,9 +85,14 @@ public class Main {
                 for (int i = 0; i < vectorInteger.length; i++) {
                     System.out.println(vectorInteger[i]);
                 }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
               
             else if (formato==3){
+                long comecoDaContagem = System.nanoTime();
+              
                 String[] vectorString= new String[1000];
                 int leftLimit = 48; // numeral '0'
                 int rightLimit = 122; // letra 'z'
@@ -102,6 +114,9 @@ public class Main {
                 for (int i = 0; i < vectorString.length; i++) {
                     System.out.println(vectorString[i]);
                 }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
 
             else{
@@ -112,6 +127,7 @@ public class Main {
             case 2:
               
               if (formato==1){
+                long comecoDaContagem = System.nanoTime();
                 
                 Double[] vectorDouble= new Double[100000];
                 
@@ -127,9 +143,14 @@ public class Main {
                 for (int i = 0; i < vectorDouble.length; i++) {
                     System.out.println(vectorDouble[i]);
                 }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
                 
             else if (formato==2){
+                long comecoDaContagem = System.nanoTime();
+              
                 Integer[] vectorInteger = new Integer[100000];
                 
                 for(int i = 0;i<vectorInteger.length;i++){
@@ -144,9 +165,14 @@ public class Main {
                 for (int i = 0; i < vectorInteger.length; i++) {
                     System.out.println(vectorInteger[i]);
                 }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
               
             else if (formato==3){
+                long comecoDaContagem = System.nanoTime();
+              
                 String[] vectorString= new String[100000];
                 int leftLimit = 48; // numeral '0'
                 int rightLimit = 122; // letra 'z'
@@ -168,6 +194,9 @@ public class Main {
                 for (int i = 0; i < vectorString.length; i++) {
                     System.out.println(vectorString[i]);
                 }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
             else{
               System.out.println("INFORME UM VALOR VÁLIDO!");
@@ -176,6 +205,7 @@ public class Main {
             case 3:
               
               if (formato==1){
+                long comecoDaContagem = System.nanoTime();
                 
                 Double[] vectorDouble= new Double[1000000];
                 
@@ -191,9 +221,14 @@ public class Main {
                 for (int i = 0; i < vectorDouble.length; i++) {
                     System.out.println(vectorDouble[i]);
                 }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
                 
             else if (formato==2){
+                long comecoDaContagem = System.nanoTime();
+              
                 Integer[] vectorInteger = new Integer[1000000];
                 
                 for(int i = 0;i<vectorInteger.length;i++){
@@ -208,9 +243,14 @@ public class Main {
                 for (int i = 0; i < vectorInteger.length; i++) {
                     System.out.println(vectorInteger[i]);
                 }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
               
             else if (formato==3){
+                long comecoDaContagem = System.nanoTime();
+              
                 String[] vectorString= new String[1000000];
                 int leftLimit = 48; // numeral '0'
                 int rightLimit = 122; // letra 'z'
@@ -232,6 +272,9 @@ public class Main {
                 for (int i = 0; i < vectorString.length; i++) {
                     System.out.println(vectorString[i]);
                 }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
             else{
               System.out.println("INFORME UM VALOR VÁLIDO!");
@@ -242,46 +285,61 @@ public class Main {
               System.out.println("Informe o Número de Elementos que o Vetor Possui:");
               tamanho = entrada.nextInt();
               if(formato==1){
+                
                 Double[] vectorDoublePessoal= new Double[tamanho];
                 for(int i = 0;i<tamanho;i++){
                   int k=i;
                   System.out.println("Informe o Elemento "+ (k+1)+" do Vetor:");
                   vectorDoublePessoal[i]=entrada.nextDouble();
                 }
+                long comecoDaContagem = System.nanoTime();
                 
                 //sort selection com double
                 vectorDoublePessoal = sortDouble.selectionSort(vectorDoublePessoal); 
                 for (int i = 0; i < vectorDoublePessoal.length; i++) {
                   System.out.println(vectorDoublePessoal[i]);
               }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
               if(formato==2){
+                
                 Integer[] vectorIntegerPessoal= new Integer[tamanho];
                 for(int i = 0;i<tamanho;i++){
                   int k=i;
                   System.out.println("Informe o Elemento "+ (k+1)+" do Vetor:");
                   vectorIntegerPessoal[i]=entrada.nextInt();
                 }
+                long comecoDaContagem = System.nanoTime();
                 
                 vectorIntegerPessoal = sortInteger.selectionSort(vectorIntegerPessoal); 
 
                 for (int i = 0; i < vectorIntegerPessoal.length; i++) {
                   System.out.println(vectorIntegerPessoal[i]);
               }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
               if(formato==3){
+                
                 String[] vectorStringPessoal= new String[tamanho];
                 for(int i = 0;i<tamanho;i++){
                   int k=i;
                   System.out.println("Informe o Elemento "+ (k+1)+" do Vetor:");
                   vectorStringPessoal[i]=entrada.nextLine();
                 }
+                long comecoDaContagem = System.nanoTime();
                 
                 vectorStringPessoal = sortString.selectionSort(vectorStringPessoal); 
 
                 for (int i = 0; i < vectorStringPessoal.length; i++) {
                   System.out.println(vectorStringPessoal[i]);
               }
+              long tempoFinal = System.nanoTime();
+              long tempoDecorrido = tempoFinal - comecoDaContagem;
+              System.out.println("Tempo de execução em milesegundos: " + (tempoDecorrido) / 1000000);
               }
               
               break;
