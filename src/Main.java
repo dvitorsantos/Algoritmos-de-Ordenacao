@@ -24,7 +24,7 @@ public class Main {
             System.out.println("5-Encerrar Execução do Programa");
 
             int variavel = entrada.nextInt();
-            int formato;
+            int formato, ordenar;
 
             System.out.print("\nPressione Um para Ordenar em Ordem Crescente ou Dois para Decrescente:");
 
@@ -38,6 +38,10 @@ public class Main {
 
             formato = entrada.nextInt();
 
+            System.out.println("\n1-Selection Sort\n2-Quick Sort\n3-Merge Sort\n4-Heap Sort");
+          
+            ordenar = entrada.nextInt();
+
             switch (variavel) {
                 case 1:
                     if (formato == 1) {
@@ -49,10 +53,15 @@ public class Main {
                             //verificar se a função nextDouble() continua funcionando após tirar os parâmetros
                             vectorDouble[i] = gerador.nextDouble();
                             while (vectorDouble[i] < 10) {
-                                vectorDouble[i] = gerador.nextDouble();
+                                vectorDouble[i] = gerador.nextDouble(100);
                             }
                         }
+                      if(ordenar==1){
                         vectorDouble = sortDouble.selectionSort(vectorDouble);
+                      }
+                      if(ordenar==2){
+                        vectorDouble = sortDouble.quickSort(vectorDouble, 0, vectorDouble.length-1);
+                      }                        
 
                         for (int i = 0; i < vectorDouble.length; i++) {
                             System.out.println(vectorDouble[i]);
@@ -72,7 +81,12 @@ public class Main {
                             }
                         }
 
-                        vectorInteger = sortInteger.selectionSort(vectorInteger);
+                        if(ordenar==1){
+                          vectorInteger = sortInteger.selectionSort(vectorInteger);
+                        }
+                        if(ordenar==2){
+                          vectorInteger = sortInteger.quickSort(vectorInteger, 0, vectorInteger.length-1);
+                        }
 
                         for (int i = 0; i < vectorInteger.length; i++) {
                             System.out.println(vectorInteger[i]);
@@ -99,7 +113,12 @@ public class Main {
                             vectorString[i] = generatedString;
                         }
 
-                        vectorString = sortString.selectionSort(vectorString);
+                        if(ordenar==1){
+                          vectorString = sortString.selectionSort(vectorString);
+                        }
+                        if(ordenar==2){
+                          vectorString = sortString.quickSort(vectorString, 0, vectorString.length-1);
+                        }
 
                         for (int i = 0; i < vectorString.length; i++) {
                             System.out.println(vectorString[i]);
@@ -122,11 +141,16 @@ public class Main {
                         for (int i = 0; i < vectorDouble.length; i++) {
                             vectorDouble[i] = gerador.nextDouble();
                             while (vectorDouble[i] < 10) {
-                                vectorDouble[i] = gerador.nextDouble();
+                                vectorDouble[i] = gerador.nextDouble(100);
                             }
                         }
 
-                        vectorDouble = sortDouble.selectionSort(vectorDouble);
+                        if(ordenar==1){
+                          vectorDouble = sortDouble.selectionSort(vectorDouble);
+                        }
+                        if(ordenar==2){
+                          vectorDouble = sortDouble.quickSort(vectorDouble, 0, vectorDouble.length-1);
+                        }    
 
                         for (int i = 0; i < vectorDouble.length; i++) {
                             System.out.println(vectorDouble[i]);
@@ -146,7 +170,12 @@ public class Main {
                             }
                         }
 
-                        vectorInteger = sortInteger.selectionSort(vectorInteger);
+                        if(ordenar==1){
+                          vectorInteger = sortInteger.selectionSort(vectorInteger);
+                        }
+                        if(ordenar==2){
+                          vectorInteger = sortInteger.quickSort(vectorInteger, 0, vectorInteger.length-1);
+                        }
 
                         for (int i = 0; i < vectorInteger.length; i++) {
                             System.out.println(vectorInteger[i]);
@@ -173,7 +202,13 @@ public class Main {
                             vectorString[i] = generatedString;
                         }
 
-                        vectorString = sortString.selectionSort(vectorString);
+                        if(ordenar==1){
+                          vectorString = sortString.selectionSort(vectorString);
+                        }
+                        if(ordenar==2){
+                          vectorString = sortString.quickSort(vectorString, 0, vectorString.length-1);
+                        }
+
 
                         for (int i = 0; i < vectorString.length; i++) {
                             System.out.println(vectorString[i]);
@@ -195,11 +230,16 @@ public class Main {
                         for (int i = 0; i < vectorDouble.length; i++) {
                             vectorDouble[i] = gerador.nextDouble();
                             while (vectorDouble[i] < 10) {
-                                vectorDouble[i] = gerador.nextDouble();
+                                vectorDouble[i] = gerador.nextDouble(100);
                             }
                         }
 
-                        vectorDouble = sortDouble.selectionSort(vectorDouble);
+                        if(ordenar==1){
+                          vectorDouble = sortDouble.selectionSort(vectorDouble);
+                        }
+                        if(ordenar==2){
+                          vectorDouble = sortDouble.quickSort(vectorDouble, 0, vectorDouble.length-1);
+                        }    
 
                         for (int i = 0; i < vectorDouble.length; i++) {
                             System.out.println(vectorDouble[i]);
@@ -219,7 +259,12 @@ public class Main {
                             }
                         }
 
-                        vectorInteger = sortInteger.selectionSort(vectorInteger);
+                        if(ordenar==1){
+                          vectorInteger = sortInteger.selectionSort(vectorInteger);
+                        }
+                        if(ordenar==2){
+                          vectorInteger = sortInteger.quickSort(vectorInteger, 0, vectorInteger.length-1);
+                        }
 
                         for (int i = 0; i < vectorInteger.length; i++) {
                             System.out.println(vectorInteger[i]);
@@ -246,7 +291,12 @@ public class Main {
                             vectorString[i] = generatedString;
                         }
 
-                        vectorString = sortString.selectionSort(vectorString);
+                        if(ordenar==1){
+                          vectorString = sortString.selectionSort(vectorString);
+                        }
+                        if(ordenar==2){
+                          vectorString = sortString.quickSort(vectorString, 0, vectorString.length-1);
+                        }
 
                         for (int i = 0; i < vectorString.length; i++) {
                             System.out.println(vectorString[i]);
@@ -264,18 +314,23 @@ public class Main {
                     tamanho = entrada.nextInt();
                     if (formato == 1) {
 
-                        Double[] vectorDoublePessoal = new Double[tamanho];
+                        Double[] vectorDouble = new Double[tamanho];
                         for (int i = 0; i < tamanho; i++) {
                             int k = i;
                             System.out.println("Informe o Elemento " + (k + 1) + " do Vetor:");
-                            vectorDoublePessoal[i] = entrada.nextDouble();
+                            vectorDouble[i] = entrada.nextDouble();
                         }
                         long comecoDaContagem = System.nanoTime();
 
                         //sort selection com double
-                        vectorDoublePessoal = sortDouble.selectionSort(vectorDoublePessoal);
-                        for (int i = 0; i < vectorDoublePessoal.length; i++) {
-                            System.out.println(vectorDoublePessoal[i]);
+                        if(ordenar==1){
+                            vectorDouble = sortDouble.selectionSort(vectorDouble);
+                          }
+                          if(ordenar==2){
+                            vectorDouble = sortDouble.quickSort(vectorDouble, 0, vectorDouble.length-1);
+                          }    
+                        for (int i = 0; i < vectorDouble.length; i++) {
+                            System.out.println(vectorDouble[i]);
                         }
                         long tempoFinal = System.nanoTime();
                         long tempoDecorrido = tempoFinal - comecoDaContagem;
@@ -283,18 +338,23 @@ public class Main {
                     }
                     if (formato == 2) {
 
-                        Integer[] vectorIntegerPessoal = new Integer[tamanho];
+                        Integer[] vectorInteger = new Integer[tamanho];
                         for (int i = 0; i < tamanho; i++) {
                             int k = i;
                             System.out.println("Informe o Elemento " + (k + 1) + " do Vetor:");
-                            vectorIntegerPessoal[i] = entrada.nextInt();
+                            vectorInteger[i] = entrada.nextInt();
                         }
                         long comecoDaContagem = System.nanoTime();
 
-                        vectorIntegerPessoal = sortInteger.selectionSort(vectorIntegerPessoal);
+                        if(ordenar==1){
+                          vectorInteger = sortInteger.selectionSort(vectorInteger);
+                        }
+                        if(ordenar==2){
+                          vectorInteger = sortInteger.quickSort(vectorInteger, 0, vectorInteger.length-1);
+                        }
 
-                        for (int i = 0; i < vectorIntegerPessoal.length; i++) {
-                            System.out.println(vectorIntegerPessoal[i]);
+                        for (int i = 0; i < vectorInteger.length; i++) {
+                            System.out.println(vectorInteger[i]);
                         }
                         long tempoFinal = System.nanoTime();
                         long tempoDecorrido = tempoFinal - comecoDaContagem;
@@ -302,15 +362,22 @@ public class Main {
                     }
                     if (formato == 3) {
 
-                        String[] vectorStringPessoal = new String[tamanho];
+                        String[] vectorString = new String[tamanho];
                         for (int i = 0; i < tamanho; i++) {
                             int k = i;
                             System.out.println("Informe o Elemento " + (k + 1) + " do Vetor:");
-                            vectorStringPessoal[i] = entrada.nextLine();
+                            vectorString[i] = entrada.nextLine();
                         }
                         long comecoDaContagem = System.nanoTime();
 
-                        vectorStringPessoal = sortString.selectionSort(vectorStringPessoal);
+                        vectorString = sortString.selectionSort(vectorString);
+                        if(ordenar==1){
+                          vectorString = sortString.selectionSort(vectorString);
+                        }
+                        if(ordenar==2){
+                          vectorString = sortString.quickSort(vectorString, 0, vectorString.length-1);
+                        }
+
 
                         for (int i = 0; i < vectorStringPessoal.length; i++) {
                             System.out.println(vectorStringPessoal[i]);
