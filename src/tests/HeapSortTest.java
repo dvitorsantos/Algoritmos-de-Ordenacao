@@ -1,26 +1,25 @@
 package tests;
 
 import algorithms.HeapSort;
-import interfaces.Sorter;
+import elements.Element;
 
 public class HeapSortTest {
     public static void main(String[] args) {
-        Sorter<String> sorterString = new HeapSort<>();
-        Sorter<Integer> sorterInteger = new HeapSort<>();
+        Element<Integer, String>[] vector = new Element[] {
+                new Element<>(4, "D"),
+                new Element<>(8, "H"),
+                new Element<>(3, "C"),
+                new Element<>(1, "A"),
+                new Element<>(5, "E"),
+                new Element<>(6, "F"),
+                new Element<>(2, "B"),
+                new Element<>(7, "G")
+        };
 
-        String [] random_words = {"hello", "world", "this", "is", "a", "test"};
+        vector = HeapSort.sort(vector, true);
 
-        Integer [] random_numbers = {5, 3, 2, 4, 7, 1, 0, 6};
-
-        random_words = sorterString.sort(random_words, true);
-        random_numbers = sorterInteger.sort(random_numbers, true);
-
-        for (String i : random_words) {
-            System.out.println(i);
-        }
-
-        for (Integer i : random_numbers) {
-            System.out.println(i);
+        for (Element i : vector) {
+            System.out.println(i.getKey() + " " + i.getValue());
         }
     }
 }

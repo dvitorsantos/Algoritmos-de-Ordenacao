@@ -1,16 +1,14 @@
 package algorithms;
 
-import interfaces.Sorter;
+import elements.Element;
 
-public class MergeSort<T extends Comparable<T>> implements Sorter<T> {
-
-    @Override
-    public T[] sort(T[] vector, boolean ascending) {
+public class MergeSort {
+    public static Element[] sort(Element[] vector, boolean ascending) {
         mergeSort(vector, 0, vector.length - 1, ascending);
         return vector;
     }
 
-    private void mergeSort(T[] vector, int left, int right, boolean ascending) {
+    private static void mergeSort(Element[] vector, int left, int right, boolean ascending) {
         if (left < right) {
             int middle = (left + right) / 2;
             mergeSort(vector, left, middle, ascending);
@@ -19,56 +17,42 @@ public class MergeSort<T extends Comparable<T>> implements Sorter<T> {
         }
     }
 
-    private void merge(T[] vector, int left, int middle, int right, boolean ascending) {
-        int n1 = middle - left + 1;
-        int n2 = right - middle;
-
-        T[] leftVector = (T[]) new Comparable[n1];
-        T[] rightVector = (T[]) new Comparable[n2];
-
-        for (int i = 0; i < n1; i++) {
-            leftVector[i] = vector[left + i];
+    private static void merge(Element[] vector, int left, int middle, int right, boolean ascending) {
+        Element[] aux = new Element[vector.length];
+        for (int i = left; i <= right; i++) {
+            aux[i] = vector[i];
         }
 
-        for (int i = 0; i < n2; i++) {
-            rightVector[i] = vector[middle + 1 + i];
-        }
-
-        int i = 0;
-        int j = 0;
+        int i = left;
+        int j = middle + 1;
         int k = left;
 
-        while (i < n1 && j < n2) {
+        while (i <= middle && j <= right) {
             if (ascending) {
-                if (leftVector[i].compareTo(rightVector[j]) <= 0) {
-                    vector[k] = leftVector[i];
+                if (aux[i].getKey().compareTo(aux[j].getKey()) <= 0) {
+                    vector[k] = aux[i];
                     i++;
                 } else {
-                    vector[k] = rightVector[j];
+                    vector[k] = aux[j];
                     j++;
                 }
             } else {
-                if (leftVector[i].compareTo(rightVector[j]) >= 0) {
-                    vector[k] = leftVector[i];
+                if (aux[i].getKey().compareTo(aux[j].getKey()) >= 0) {
+                    vector[k] = aux[i];
                     i++;
                 } else {
-                    vector[k] = rightVector[j];
+                    vector[k] = aux[j];
                     j++;
                 }
             }
+
             k++;
         }
 
-        while (i < n1) {
-            vector[k] = leftVector[i];
+        while (i <= middle) {
+            vector[k] = aux[i];
+            k++;
             i++;
-            k++;
-        }
-
-        while (j < n2) {
-            vector[k] = rightVector[j];
-            j++;
-            k++;
         }
     }
 }

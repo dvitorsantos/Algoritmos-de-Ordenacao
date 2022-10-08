@@ -1,21 +1,9 @@
 package algorithms;
 
-import interfaces.Sorter;
+import elements.Element;
 
-public class HeapSort<T extends Comparable<T>> implements Sorter<T> {
-    private boolean ascending;
-
-    public boolean isAscending() {
-        return ascending;
-    }
-
-    public void setAscending(boolean ascending) {
-        this.ascending = ascending;
-    }
-
-    @Override
-    public T[] sort(T[] vector, boolean ascending) {
-        this.setAscending(ascending);
+public class HeapSort {
+    public static Element[] sort(Element[] vector, boolean ascending) {
 
         int n = vector.length;
 
@@ -24,7 +12,7 @@ public class HeapSort<T extends Comparable<T>> implements Sorter<T> {
         }
 
         for (int i = n - 1; i >= 0; i--) {
-            T temp = vector[0];
+            Element temp = vector[0];
             vector[0] = vector[i];
             vector[i] = temp;
 
@@ -34,31 +22,31 @@ public class HeapSort<T extends Comparable<T>> implements Sorter<T> {
         return vector;
     }
 
-    private void heapify(T[] vector, int n, int i, boolean ascending) {
+    private static void heapify(Element[] vector, int n, int i, boolean ascending) {
         int largest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if (isAscending()) {
-            if (left < n && ( vector[left]).compareTo(vector[largest]) > 0) {
+        if (ascending) {
+            if (left < n && ( vector[left]).getKey().compareTo(vector[largest].getKey()) > 0) {
                 largest = left;
             }
 
-            if (right < n && (vector[right]).compareTo(vector[largest]) > 0) {
+            if (right < n && (vector[right]).getKey().compareTo(vector[largest].getKey()) > 0) {
                 largest = right;
             }
         } else {
-            if (left < n && (vector[left]).compareTo(vector[largest]) < 0) {
+            if (left < n && (vector[left]).getKey().compareTo(vector[largest].getKey()) < 0) {
                 largest = left;
             }
 
-            if (right < n && (vector[right]).compareTo(vector[largest]) < 0) {
+            if (right < n && (vector[right]).getKey().compareTo(vector[largest].getKey()) < 0) {
                 largest = right;
             }
         }
 
         if (largest != i) {
-            T swap = vector[i];
+            Element swap = vector[i];
             vector[i] = vector[largest];
             vector[largest] = swap;
 

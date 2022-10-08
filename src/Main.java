@@ -39,7 +39,7 @@ public class Main {
             formato = entrada.nextInt();
 
             System.out.println("\n1-Selection Sort\n2-Quick Sort\n3-Merge Sort\n4-Heap Sort");
-          
+
             ordenar = entrada.nextInt();
 
             switch (variavel) {
@@ -61,7 +61,7 @@ public class Main {
                       }
                       if(ordenar==2){
                         vectorDouble = sortDouble.quickSort(vectorDouble, 0, vectorDouble.length-1);
-                      }                        
+                      }
 
                         for (int i = 0; i < vectorDouble.length; i++) {
                             System.out.println(vectorDouble[i]);
@@ -150,7 +150,7 @@ public class Main {
                         }
                         if(ordenar==2){
                           vectorDouble = sortDouble.quickSort(vectorDouble, 0, vectorDouble.length-1);
-                        }    
+                        }
 
                         for (int i = 0; i < vectorDouble.length; i++) {
                             System.out.println(vectorDouble[i]);
@@ -239,7 +239,7 @@ public class Main {
                         }
                         if(ordenar==2){
                           vectorDouble = sortDouble.quickSort(vectorDouble, 0, vectorDouble.length-1);
-                        }    
+                        }
 
                         for (int i = 0; i < vectorDouble.length; i++) {
                             System.out.println(vectorDouble[i]);
@@ -328,7 +328,7 @@ public class Main {
                           }
                           if(ordenar==2){
                             vectorDouble = sortDouble.quickSort(vectorDouble, 0, vectorDouble.length-1);
-                          }    
+                          }
                         for (int i = 0; i < vectorDouble.length; i++) {
                             System.out.println(vectorDouble[i]);
                         }

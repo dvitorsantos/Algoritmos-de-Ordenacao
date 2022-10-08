@@ -1,34 +1,23 @@
 package algorithms;
 
-import interfaces.Sorter;
+import elements.Element;
 
-public class SelectionSort<T extends Comparable<T>> implements Sorter<T> {
-    private boolean ascending;
-
-    public boolean isAscending() {
-        return ascending;
-    }
-
-    public void setAscending(boolean ascending) {
-        this.ascending = ascending;
-    }
-
-    public T[] sort(T[] vector, boolean ascending) {
-        this.setAscending(ascending);
-
+public class SelectionSort {
+    public static Element[] sort(Element[] vector, boolean ascending) {
         for (int i = 0; i < vector.length; i++) {
             int min = i;
 
             for (int j = i + 1; j < vector.length; j++) {
-                if (this.isAscending() ? vector[j].compareTo(vector[min]) < 0 : vector[j].compareTo(vector[min]) > 0) {
+                if (ascending ?
+                        vector[j].getKey().compareTo(vector[min].getKey()) < 0 :
+                        vector[j].getKey().compareTo(vector[min].getKey()) > 0) {
                     min = j;
                 }
             }
 
-            //troca os valores
-            T aux = vector[i];
+            Element temp = vector[i];
             vector[i] = vector[min];
-            vector[min] = aux;
+            vector[min] = temp;
         }
 
         return vector;

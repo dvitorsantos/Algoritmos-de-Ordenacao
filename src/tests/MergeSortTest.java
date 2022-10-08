@@ -1,18 +1,24 @@
 package tests;
 
 import algorithms.MergeSort;
-import interfaces.Sorter;
-
+import elements.Element;
 public class MergeSortTest {
     public static void main(String[] args) {
-        Sorter<Integer> sorter = new MergeSort<>();
+        Element<Integer, String>[] vector = new Element[] {
+                new Element<>(4, "D"),
+                new Element<>(8, "H"),
+                new Element<>(3, "C"),
+                new Element<>(1, "A"),
+                new Element<>(5, "E"),
+                new Element<>(6, "F"),
+                new Element<>(2, "B"),
+                new Element<>(7, "G")
+        };
 
-        Integer[] vector = { 5, 3, 2, 4, 7, 1, 0, 6 };
+        vector = MergeSort.sort(vector, true);
 
-        vector = sorter.sort(vector, true);
-
-        for (Integer i : vector) {
-            System.out.println(i);
+        for (Element i : vector) {
+            System.out.println(i.getKey() + " " + i.getValue());
         }
     }
 }
