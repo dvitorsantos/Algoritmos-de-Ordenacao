@@ -1,7 +1,6 @@
 package algorithms;
 
 import elements.Element;
-
 public class HeapSort {
     public static Element[] sort(Element[] vector, boolean ascending) {
 

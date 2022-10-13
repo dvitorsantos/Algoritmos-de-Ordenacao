@@ -4,7 +4,9 @@ import elements.Element;
 
 public class SelectionSort {
     public static Element[] sort(Element[] vector, boolean ascending) {
-        for (int i = 0; i < vector.length; i++) {
+        Element[] key_order = vector;
+        
+        for (int i = 0; i < vector.length - 1; i++) {
             int min = i;
 
             for (int j = i + 1; j < vector.length; j++) {

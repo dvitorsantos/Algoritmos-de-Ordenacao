@@ -8,11 +8,6 @@ public class IntroSort {
     }
 
     private static Element[] intro(Element[] vector, int start, int end, int depth, boolean ascending) {
-        for (int i = 0; i < vector.length; i++) {
-            System.out.print(vector[i].getKey() + " ");
-        }
-        System.out.println(" - depth: " + depth + " - start: " + start + " - end: " + end + " - vector_depth: " + getDepth(vector.length));
-
         if (start < end) {
             if (depth > getDepth(vector.length)) {
                 HeapSort.sort(vector, ascending);
