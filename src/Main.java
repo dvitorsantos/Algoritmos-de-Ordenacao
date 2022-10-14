@@ -1,8 +1,10 @@
+import algorithms.HeapSort;
 import algorithms.SelectionSort;
 import elements.Element;
 import elements.Box;
 import helpers.Entries;
 import helpers.Timer;
+import threads.*;
 
 import java.util.Random;
 
@@ -20,44 +22,30 @@ public class Main {
         Element<String, Box> medium_string_entrie[] = Entries.stringEntrie(100000, 10);
         Element<String, Box> big_string_entrie[] = Entries.stringEntrie(1000000, 10);
 
-        Timer timer = new Timer();
+        Thread heap_sort_thread = new Thread(new HeapSortTest(small_integer_entrie, medium_integer_entrie, big_integer_entrie,
+                                                                small_double_entrie, medium_double_entrie, big_double_entrie,
+                                                                small_string_entrie, medium_string_entrie, big_string_entrie, true));
+        Thread intro_sort_thread = new Thread(new IntroSortTest(small_integer_entrie, medium_integer_entrie, big_integer_entrie,
+                                                                small_double_entrie, medium_double_entrie, big_double_entrie,
+                                                                small_string_entrie, medium_string_entrie, big_string_entrie, true));
+        Thread selection_sort_thread = new Thread(new SelectionSortTest(small_integer_entrie, medium_integer_entrie, big_integer_entrie,
+                                                                small_double_entrie, medium_double_entrie, big_double_entrie,
+                                                                small_string_entrie, medium_string_entrie, big_string_entrie, true));
+        Thread quick_sort_thread = new Thread(new QuickSortTest(small_integer_entrie, medium_integer_entrie, big_integer_entrie,
+                                                                small_double_entrie, medium_double_entrie, big_double_entrie,
+                                                                small_string_entrie, medium_string_entrie, big_string_entrie, true));
+        Thread merge_sort_thread = new Thread(new MergeSortTest(small_integer_entrie, medium_integer_entrie, big_integer_entrie,
+                                                                small_double_entrie, medium_double_entrie, big_double_entrie,
+                                                                small_string_entrie, medium_string_entrie, big_string_entrie, true));
+        Thread tree_sort_thread = new Thread(new TreeSortTest(small_integer_entrie, medium_integer_entrie, big_integer_entrie,
+                                                                small_double_entrie, medium_double_entrie, big_double_entrie,
+                                                                small_string_entrie, medium_string_entrie, big_string_entrie, true));
 
-        //SELECTION SORT
-
-        timer.start("SelectionSort - Small Integer Entrie");
-        SelectionSort.sort(small_integer_entrie, true);
-        timer.stop();
-
-        timer.start("SelectionSort - Medium Integer Entrie");
-        SelectionSort.sort(medium_integer_entrie, true);
-        timer.stop();
-
-        timer.start("SelectionSort - Big Integer Entrie");
-        SelectionSort.sort(big_integer_entrie, true);
-        timer.stop();
-
-        timer.start("SelectionSort - Small Double Entrie");
-        SelectionSort.sort(small_double_entrie, true);
-        timer.stop();
-
-        timer.start("SelectionSort - Medium Double Entrie");
-        SelectionSort.sort(medium_double_entrie, true);
-        timer.stop();
-
-        timer.start("SelectionSort - Big Double Entrie");
-        SelectionSort.sort(big_double_entrie, true);
-        timer.stop();
-
-        timer.start("SelectionSort - Small String Entrie");
-        SelectionSort.sort(small_string_entrie, true);
-        timer.stop();
-
-        timer.start("SelectionSort - Medium String Entrie");
-        SelectionSort.sort(medium_string_entrie, true);
-        timer.stop();
-
-        timer.start("SelectionSort - Big String Entrie");
-        SelectionSort.sort(big_string_entrie, true);
-        timer.stop();
+        heap_sort_thread.start();
+        intro_sort_thread.start();
+        merge_sort_thread.start();
+        selection_sort_thread.start();
+        tree_sort_thread.start();
+        quick_sort_thread.start();
     }
 }

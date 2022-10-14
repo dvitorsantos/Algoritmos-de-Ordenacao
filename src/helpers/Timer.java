@@ -9,16 +9,12 @@ public class Timer {
         this.end_time = 0;
     }
 
-    public void start(String msg) {
-        System.out.println(msg);
-
+    public void start() {
         this.start_time = System.currentTimeMillis();
     }
 
     public void stop() {
         this.end_time = System.currentTimeMillis();
-
-        System.out.println("Time: " + getElapsedTime() + "ms");
     }
 
     public long getElapsedTime() {
