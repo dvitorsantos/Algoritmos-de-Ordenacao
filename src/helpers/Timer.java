@@ -17,7 +17,8 @@ public class Timer {
         this.end_time = System.currentTimeMillis();
     }
 
-    public long getElapsedTime() {
-        return this.end_time - this.start_time;
+    public void getElapsedTime() {
+        System.out.println("\nO Tempo Decorrido em Milisegundos é:");
+        System.out.println(this.end_time - this.start_time);
     }
 }
