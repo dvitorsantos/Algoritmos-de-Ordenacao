@@ -4,17 +4,17 @@ import elements.Box;
 import elements.Element;
 
 public class Tester {
-    private Element<Integer, Box> small_integer_entrie[];
-    private Element<Integer, Box> medium_integer_entrie[];
-    private Element<Integer, Box> big_integer_entrie[];
+    private Element<Integer, Box> small_integer_entrie[] = Entries.integerEntrie(1000, 0, 1000);
+    private Element<Integer, Box> medium_integer_entrie[] = Entries.integerEntrie(100000, 0, 100000);
+    private Element<Integer, Box> big_integer_entrie[] = Entries.integerEntrie(1000000, 0, 1000000);
 
-    private Element<Double, Box> small_double_entrie[];
-    private Element<Double, Box> medium_double_entrie[];
-    private Element<Double, Box> big_double_entrie[];
+    private Element<Double, Box> small_double_entrie[] = Entries.doubleEntrie(1000, 0, 1000);
+    private Element<Double, Box> medium_double_entrie[] = Entries.doubleEntrie(100000, 0, 100000);
+    private Element<Double, Box> big_double_entrie[] = Entries.doubleEntrie(1000000, 0, 1000000);
 
-    private Element<String, Box> small_string_entrie[];
-    private Element<String, Box> medium_string_entrie[];
-    private Element<String, Box> big_string_entrie[];
+    private Element<String, Box> small_string_entrie[] = Entries.stringEntrie(1000, 10);
+    private Element<String, Box> medium_string_entrie[] = Entries.stringEntrie(100000, 10);
+    private Element<String, Box> big_string_entrie[] = Entries.stringEntrie(1000000, 10);
 
     public Element<Integer, Box>[] getSmall_integer_entrie() {
         return small_integer_entrie;

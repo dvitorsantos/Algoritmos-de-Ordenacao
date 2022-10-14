@@ -11,23 +11,10 @@ public class QuickSortTest extends Tester implements Runnable {
 
     private Timer timer;
 
-    public QuickSortTest(Element[] small_integer, Element[] medium_integer, Element[] big_integer,
-                         Element[] small_double, Element[] medium_double, Element[] big_double,
-                         Element[] small_string, Element[] medium_string, Element[] big_string,
-                         boolean ascending) {
+    public QuickSortTest(boolean ascending) {
         this.timer = new Timer();
         this.ascending = ascending;
-        this.setSmall_integer_entrie(small_integer);
-        this.setMedium_integer_entrie(medium_integer);
-        this.setBig_integer_entrie(big_integer);
-        this.setSmall_double_entrie(small_double);
-        this.setMedium_double_entrie(medium_double);
-        this.setBig_double_entrie(big_double);
-        this.setSmall_string_entrie(small_string);
-        this.setMedium_string_entrie(medium_string);
-        this.setBig_string_entrie(big_string);
     }
-
     public boolean isAscending() {
         return ascending;
     }
