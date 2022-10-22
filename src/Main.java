@@ -1,5 +1,3 @@
-import algorithms.HeapSort;
-import algorithms.SelectionSort;
 import elements.Element;
 import elements.Box;
 import helpers.Entries;
