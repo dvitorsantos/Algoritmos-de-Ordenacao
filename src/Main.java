@@ -8,6 +8,10 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        //obs: ao instanciar um objeto thread, é alocada memória para cada thread executar seu algoritmo de ordenação.
+        //por isso, é necessário bastante memória para executar as múltiplas threads e iniciar os testes.
+        //Os 6 testes se mostraram estáveis com 16GB de memória RAM.
+
         Thread heap_sort_thread = new Thread(new HeapSortTest(true));
         Thread intro_sort_thread = new Thread(new IntroSortTest(true));
         Thread selection_sort_thread = new Thread(new SelectionSortTest(true));
